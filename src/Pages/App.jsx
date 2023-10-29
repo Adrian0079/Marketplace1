@@ -3,6 +3,7 @@ import { useState } from 'react'
 import React from 'react'
 import { BrowserRouter, useRoutes } from 'react-router-dom'
 
+import ShoppingCartProvider from '../Global/ContextP'
 import Home from './Home'
 import MyAccount from './MyAccount'
 import MyOrder from './MyOrder'
@@ -27,10 +28,12 @@ function App() {
  
 
   return (
-    <BrowserRouter>
-      <Navbar />
-      <AppRoutes />
-    </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <Navbar />
+        <AppRoutes />
+      </BrowserRouter>
+    </ShoppingCartProvider>
   )
 }
 

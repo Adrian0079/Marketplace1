@@ -1,8 +1,9 @@
-import { Box, Grid } from '@mui/material'
+import { Box, Grid, Stack } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Layout from '../components/Layout'
 import CardT from '../components/CardT'
+import ProductDetail from '../components/ProductDetail'
 
 const Home = () => {
 
@@ -16,16 +17,33 @@ const Home = () => {
 
   return (
     <Layout>
-      {
-        products?.map(()=>(
-          <CardT />
-        )
-           
-        )
-      }
+      <ProductDetail />
+      
 
+      
+      <Box marginTop={5} border={2} borderColor={"green"}   >
+       <Grid container
+          spacing={2} columns={{ xs: 4, sm: 8, md: 12, }}
+          >
+         
+            
+              {   
+                products?.map( e =>(
+                  <Grid item xs={12} sm={6} md={4} lg={8} border={4} borderColor="red" marginTop={0} key={e.id}>
+                    <CardT  data={e} />
+                  </Grid>
+                  )
+                )
+              }
+        
+            
+          
+        </Grid>
+      </Box>
 
-    
+      <Box border={5} sx={{width: "21000px"}}>
+      
+      </Box>
 
         {/* -------------------------------------------------------------------------------------------------------------------- */}
       {/* <Box border={2}>
