@@ -25,13 +25,18 @@ const CardT = (data) => {
 
 
     return (
+      
         <Box>
-        <TextField
-          type="text"
-          placeholder="Buscar productos"
-          value={context.searchTerm}
-          onChange={(e) => context.setSearchTerm(e.target.value)}
-        />
+          <Box display="flex" alignItems="center" justifyContent="center" borderRadius={0.1} border={5} borderColor="red">
+            <TextField
+            type="text"
+            placeholder="Search products"
+            value={context.searchTerm}
+            onChange={(e) => context.setSearchTerm(e.target.value)}
+            sx={{marginBottom: "50px", marginTop: "50px", width:"400px", border:'2px solid #ccc', borderRadius:"5px"}}
+          />
+          </Box>
+        
         <Grid container spacing={1}>
           {context.products &&
             context.products

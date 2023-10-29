@@ -13,23 +13,25 @@ const Home = () => {
   
   return (
     <Layout>
-      <ProductDetail />
+      
+      <Box width={9000}>
+
+      </Box>
       
 
       
       <Box marginTop={5} border={2} borderColor={"green"}   >
-       
-                 
-                    <CardT />
-            
-            
-          
-       
+      
+        <CardT />  
+
       </Box>
 
-      <Box border={5} sx={{width: "21000px"}}>
-      
+      <Box width={9000}>
+
       </Box>
+      
+
+      
 
         {/* -------------------------------------------------------------------------------------------------------------------- */}
       {/* <Box border={2}>
