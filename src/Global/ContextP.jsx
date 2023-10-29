@@ -19,6 +19,12 @@ export const ShoppingCartProvider =({children}) =>{
     });
     
 
+    //Carrito de compras
+    const[cartP, setCartP] = useState([]);
+
+    const [check, setCheck ] =useState(false);
+    const openCheck = () => setCheck(true);
+    const closeCheck = () => setIsDetail(false);
 
     console.log("contamos: ", counter)
 
@@ -26,7 +32,9 @@ export const ShoppingCartProvider =({children}) =>{
         <ShoppingCartContext.Provider value={{
             counter,setCounter,
             openProductDetail, closeProductDetail, setIsDetail, isDetail, 
-            showProduct, setShowProduct
+            showProduct, setShowProduct,
+            cartP, setCartP,
+            check, setCheck, openCheck, closeCheck
         }}>
             {children}
         </ShoppingCartContext.Provider>

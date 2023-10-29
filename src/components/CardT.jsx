@@ -9,10 +9,19 @@ const CardT = (data) => {
 
     const context = useContext(ShoppingCartContext)
 
+    //Funcion para los detalles del producto.
     const shProduct =(productDetails)=>{
         context.openProductDetail()
         context.setShowProduct(productDetails)
     }
+
+    //Funcion para añadir al carrito de compras.
+    const addProducts =(data)=>{
+        context.setCounter(context.counter + 1)
+        context.setCartP([...context.cartP, data])
+        console.log("carrito", context.cartP )
+    }
+
 
     return (
     
@@ -24,11 +33,10 @@ const CardT = (data) => {
                 title="green iguana"
             />
             <Stack direction="row" spacing={2} justifyContent="space-evenly" alignItems="center">
-            <Fab size="small" color="secondary" aria-label="add" onClick={()=> context.setCounter(context.counter + 1)}>
+            <Fab size="small" color="secondary" aria-label="add" onClick={()=>addProducts(data.data) }>
             
                 <Add />
             
-                {/* <Add onClick={()=>{console.log("Hola")}}/> */}  
             </Fab>
 
             <Fab variant="extended" size="small" color="primary">
