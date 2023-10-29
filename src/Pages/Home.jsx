@@ -1,20 +1,16 @@
 import { Box, Grid, Stack } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
 import Layout from '../components/Layout'
 import CardT from '../components/CardT'
 import ProductDetail from '../components/ProductDetail'
+import { ShoppingCartContext } from '../Global/ContextP'
+
 
 const Home = () => {
 
-  const [products, setProducts ] =useState(null);
-
-  useEffect (()=>{
-    fetch('https://api.escuelajs.co/api/v1/products')
-    .then(response => response.json())
-    .then(data => setProducts(data))
-  }, [])
-
+  const context = useContext(ShoppingCartContext)
+  
   return (
     <Layout>
       <ProductDetail />
@@ -28,7 +24,7 @@ const Home = () => {
          
             
               {   
-                products?.map( e =>(
+                context.products?.map( e =>(
                   <Grid item xs={12} sm={6} md={4} lg={8} border={4} borderColor="red" marginTop={0} key={e.id}>
                     <CardT  data={e} />
                   </Grid>

@@ -1,9 +1,10 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider =({children}) =>{
 
+    
     const [counter, setCounter ] =useState(0);
 
 
@@ -25,6 +26,18 @@ export const ShoppingCartProvider =({children}) =>{
     // const openCheck = () => setCheck(true);
     // const closeCheck = () => setIsDetail(false);
 
+    //Productos de la api-------->
+
+    const [products, setProducts ] =useState(null);
+
+    useEffect (()=>{
+        fetch('https://api.escuelajs.co/api/v1/products')
+        .then(response => response.json())
+        .then(data => setProducts(data))
+      }, [])
+
+   //Productos de la api-------->
+
     console.log("contamos: ", counter)
 
     return(
@@ -33,6 +46,7 @@ export const ShoppingCartProvider =({children}) =>{
             openProductDetail, closeProductDetail, setIsDetail, isDetail, 
             showProduct, setShowProduct,
             cartP, setCartP,
+            products, setProducts
             // check, setCheck, openCheck, closeCheck
         }}>
             {children}
