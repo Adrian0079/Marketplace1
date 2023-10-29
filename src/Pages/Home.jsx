@@ -18,23 +18,13 @@ const Home = () => {
 
       
       <Box marginTop={5} border={2} borderColor={"green"}   >
-       <Grid container
-          spacing={2} columns={{ xs: 4, sm: 8, md: 12, }}
-          >
-         
+       
+                 
+                    <CardT />
             
-              {   
-                context.products?.map( e =>(
-                  <Grid item xs={12} sm={6} md={4} lg={8} border={4} borderColor="red" marginTop={0} key={e.id}>
-                    <CardT  data={e} />
-                  </Grid>
-                  )
-                )
-              }
-        
             
           
-        </Grid>
+       
       </Box>
 
       <Box border={5} sx={{width: "21000px"}}>

@@ -6,7 +6,7 @@ export const ShoppingCartProvider =({children}) =>{
 
     
     const [counter, setCounter ] =useState(0);
-
+    
 
     //Detalles de el producto
     const [isDetail, setIsDetail ] =useState(false);
@@ -29,16 +29,22 @@ export const ShoppingCartProvider =({children}) =>{
     //Productos de la api-------->
 
     const [products, setProducts ] =useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+
 
     useEffect (()=>{
         fetch('https://api.escuelajs.co/api/v1/products')
         .then(response => response.json())
-        .then(data => setProducts(data))
+        .then(data => {setProducts(data)
+        console.log(data)
+        })
+        
       }, [])
 
    //Productos de la api-------->
 
     console.log("contamos: ", counter)
+
 
     return(
         <ShoppingCartContext.Provider value={{
@@ -46,7 +52,8 @@ export const ShoppingCartProvider =({children}) =>{
             openProductDetail, closeProductDetail, setIsDetail, isDetail, 
             showProduct, setShowProduct,
             cartP, setCartP,
-            products, setProducts
+            products, setProducts,
+            searchTerm, setSearchTerm
             // check, setCheck, openCheck, closeCheck
         }}>
             {children}
