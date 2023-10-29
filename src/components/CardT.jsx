@@ -1,4 +1,4 @@
-import { Add, Class, Delete, LinkedIn, Navigation } from '@mui/icons-material'
+import { Add, Class, Delete, LinkedIn, Navigation, Notes } from '@mui/icons-material'
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Fab, Fade, IconButton, Stack, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { useContext } from 'react'
@@ -8,8 +8,13 @@ import { ShoppingCartContext } from '../Global/ContextP'
 const CardT = (data) => {
 
     const context = useContext(ShoppingCartContext)
-    // ()=> context.setCounter(context.count + 1)
-  return (
+
+    const shProduct =(productDetails)=>{
+        context.openProductDetail()
+        context.setShowProduct(productDetails)
+    }
+
+    return (
     
         <Card sx={{ maxWidth: 400, cursor:"pointer" }} border={0}>
             <CardMedia
@@ -21,15 +26,20 @@ const CardT = (data) => {
             <Stack direction="row" spacing={2} justifyContent="space-evenly" alignItems="center">
             <Fab size="small" color="secondary" aria-label="add" onClick={()=> context.setCounter(context.counter + 1)}>
             
-                <Delete />
+                <Add />
             
-                {/* <Add onClick={()=>{console.log("Hola")}}/> */}
+                {/* <Add onClick={()=>{console.log("Hola")}}/> */}  
             </Fab>
 
             <Fab variant="extended" size="small" color="primary">
                 <Class sx={{ mr: 1 }} />
                     {data.data.category.name}
             </Fab>
+            <Fab variant="extended" size="small" color="primary" onClick={()=>shProduct(data.data)}>
+                <Notes />
+            </Fab>
+
+
             </Stack>
 
                 <CardContent >
