@@ -17,6 +17,7 @@ const CardT = (data) => {
 
     //Funcion para añadir al carrito de compras.
     const addProducts =(data)=>{
+        context.openProductDetail()
         context.setCounter(context.counter + 1)
         context.setCartP([...context.cartP, data])
         console.log("carrito", context.cartP )
@@ -43,7 +44,7 @@ const CardT = (data) => {
                 <Class sx={{ mr: 1 }} />
                     {data.data.category.name}
             </Fab>
-            <Fab variant="extended" size="small" color="primary" onClick={()=>shProduct(data.data)}>
+            <Fab variant="extended" size="small" color="primary" onClick={()=>addProducts(data.data)}>
                 <Notes />
             </Fab>
 
