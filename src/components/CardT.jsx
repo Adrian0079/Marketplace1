@@ -21,7 +21,8 @@ const CardT = (data) => {
         context.setCounter(context.counter + 1)
         context.setCartP([...context.cartP, product])
         console.log("carrito", context.cartP)
-        
+        context.setAddPrice(context.addPrice + product.price)
+        console.log("precio añadido:", context.addPrice)
     }
 
 

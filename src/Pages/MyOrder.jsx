@@ -39,11 +39,15 @@ const MyOrder = () => {
               <Typography variant="body2" color="text.secondary">
                 $ {product.price}
               </Typography>
+              
             </CardContent>
           </Card>
         </Grid>
       ))}
     </Grid>
+    <Typography variant="h6" component="div">
+                Total Price: ${context.addPrice} 
+              </Typography>
     </Layout>
   )
 }

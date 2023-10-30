@@ -8,7 +8,7 @@ export const ShoppingCartProvider =({children}) =>{
     const [counter, setCounter ] =useState(0);
     
 
-    
+    const [addPrice, setAddPrice] =useState(0)
 
    
 
@@ -42,8 +42,9 @@ export const ShoppingCartProvider =({children}) =>{
             counter,setCounter, 
             cartP, setCartP,
             products, setProducts,
-            searchTerm, setSearchTerm
-            // check, setCheck, openCheck, closeCheck
+            searchTerm, setSearchTerm,
+            addPrice, setAddPrice
+            
         }}>
             {children}
         </ShoppingCartContext.Provider>
