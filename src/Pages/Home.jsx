@@ -1,9 +1,9 @@
 import { Box, Grid, Stack, Typography } from '@mui/material'
 import React, { useContext } from 'react'
-import Navbar from '../components/Navbar'
+
 import Layout from '../components/Layout'
 import CardT from '../components/CardT'
-import ProductDetail from '../components/ProductDetail'
+
 import { ShoppingCartContext } from '../Global/ContextP'
 
 
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <Layout>
       
-      <Box width={9000} border={5}>
+      <Box width={9000} border={0}>
 
       </Box>
 
@@ -28,7 +28,7 @@ const Home = () => {
 
       </Box>
 
-      <Box width={9000} border={5}>
+      <Box width={9000} border={0}>
 
       </Box>
 

@@ -53,7 +53,7 @@ const CardT = () => {
                         <Add />
                     </Fab>
                     <CardContent>
-                      <Typography variant="h6" component="div">
+                      <Typography variant="h6" component="div" fontSize={15}>
                         {product.title}
                       </Typography>
                       <Typography 
