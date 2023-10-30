@@ -1,4 +1,4 @@
-import { AddShoppingCart, Delete } from '@mui/icons-material'
+import { AddShoppingCart, Delete, Pets } from '@mui/icons-material'
 import { AppBar, Box, Button, Toolbar, Typography, styled } from '@mui/material'
 import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
@@ -14,7 +14,7 @@ const StyledToolbar = styled(Toolbar)({
 })
 
 const MyButtonA = styled(Button)({
-    backgroundColor:"#838896",
+    backgroundColor:"#E4E4E4",
     color:"#000000",
     margin: 2,
     "&:hover": {
@@ -41,32 +41,20 @@ const Navbar = () => {
     const context = useContext(ShoppingCartContext)
 
   return (
-    <AppBar position="sticky">
-{/* {context.counter} */}
+    <AppBar position="sticky" sx={{backgroundColor:"black"}}>
+
         <StyledToolbar>    
             <UserBox2>
-                <NavLink to='/shopi'>
-                    <MyButtonA variant='outlined'>Shopi</MyButtonA>
-                </NavLink>
-                <NavLink to='/all'>
-                    <MyButtonA variant='outlined'>All</MyButtonA>
-                </NavLink>
-                <NavLink to='/clothes'>
-                    <MyButtonA variant='outlined'>Clothes</MyButtonA>
-                </NavLink>
-                
+                <NavLink to='/home'>
+                    <MyButtonA variant='outlined'>Beast Store</MyButtonA>
+                </NavLink>   
+                <Pets />             
             </UserBox2>
 
             <UserBox>
                 <NavLink to='/my-order'>
                     <MyButtonA variant='outlined' startIcon={<AddShoppingCart />}>My orders {context.counter} </MyButtonA>
                     
-                </NavLink>
-                <NavLink to='/my-account'>
-                    <MyButtonA variant='outlined'>My Account</MyButtonA>
-                </NavLink>
-                <NavLink to='/sign-in'>
-                    <MyButtonA variant='outlined'>Sign In</MyButtonA>
                 </NavLink>
             </UserBox>
 

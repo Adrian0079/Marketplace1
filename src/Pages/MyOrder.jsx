@@ -24,7 +24,7 @@ const MyOrder = () => {
     <Layout>
       <Grid container spacing={2}>
       {context.cartP.map((product) => (
-        <Grid item xs={12} sm={6} md={4} key={product.id}>
+        <Grid item xs={12} sm={6} md={4} lg={2} xl={1} key={product.id}>
           <Card>
             <CardMedia
               component="img"
@@ -36,7 +36,9 @@ const MyOrder = () => {
               <Typography variant="h6" component="div">
                 {product.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.secondary" 
+                      border={2} textAlign="center" 
+                      borderColor={"black"} bgcolor={"orange"} fontWeight="bold" fontSize={17}>
                 $ {product.price}
               </Typography>
               
@@ -45,7 +47,9 @@ const MyOrder = () => {
         </Grid>
       ))}
     </Grid>
-    <Typography variant="h6" component="div">
+    <Typography variant="h6" component="div" 
+    bgcolor={"orange"} fontWeight="bold" 
+    fontSize={32} borderRadius={4} p={2} height={95} border={5} borderColor={"gray"}>
                 Total Price: ${context.addPrice} 
               </Typography>
     </Layout>

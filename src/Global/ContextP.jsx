@@ -4,10 +4,10 @@ export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider =({children}) =>{
 
-    
+    //Contador del carrito
     const [counter, setCounter ] =useState(0);
     
-
+    //Suma de precios
     const [addPrice, setAddPrice] =useState(0)
 
    

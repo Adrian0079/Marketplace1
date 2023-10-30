@@ -5,15 +5,11 @@ import { useContext } from 'react'
 import { ShoppingCartContext } from '../Global/ContextP'
 
 
-const CardT = (data) => {
+const CardT = () => {
 
     const context = useContext(ShoppingCartContext)
 
-    //Funcion para los detalles del producto.
-    const shProduct =(productDetails)=>{
-        context.openProductDetail()
-        context.setShowProduct(productDetails)
-    }
+    
 
     //Funcion para añadir al carrito de compras.
     const addProducts =(product)=>{
@@ -46,21 +42,24 @@ const CardT = (data) => {
                 product.title.toLowerCase().includes(context.searchTerm.toLowerCase())
               )
               .map((product) => (
-                <Grid item xs={12} sm={6} md={4} key={product.id}>
-                  <Card>
+                <Grid boxShadow={5} item xs={12} sm={6} md={4} lg={2} xl={1} key={product.id}  >
+                  <Card sx={{width: '100%', height: '100%'}}>
                   <CardMedia
                     sx={{ height: 140 }}
                     image={product.images[0]}
                     
                     />
-                    <Fab color="primary" aria-label="add" onClick={() => addProducts(product)}>
+                    <Fab size="small" color="default" aria-label="add" onClick={() => addProducts(product)}>
                         <Add />
                     </Fab>
                     <CardContent>
                       <Typography variant="h6" component="div">
                         {product.title}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography 
+                      variant="body2" color="text.secondary" 
+                      border={2} textAlign="center" 
+                      borderColor={"black"} bgcolor={"orange"} fontWeight="bold" fontSize={17}>
                         $ {product.price}
                       </Typography>
                     </CardContent>

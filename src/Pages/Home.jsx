@@ -1,4 +1,4 @@
-import { Box, Grid, Stack } from '@mui/material'
+import { Box, Grid, Stack, Typography } from '@mui/material'
 import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
 import Layout from '../components/Layout'
@@ -14,61 +14,24 @@ const Home = () => {
   return (
     <Layout>
       
-      <Box width={9000}>
+      <Box width={9000} border={5}>
 
       </Box>
-      
 
-      
-      <Box marginTop={5} border={0} borderColor={"green"}   >
-      
+      <Box border={0} borderColor={"green"}   >
+
+        <Typography variant='h3' textAlign="center" fontWeight="bold" mt={2}>
+          Beast Store
+        </Typography>
+
         <CardT />  
 
       </Box>
 
-      <Box width={9000}>
-
-      </Box>
-      
-
-      
-
-        {/* -------------------------------------------------------------------------------------------------------------------- */}
-      {/* <Box border={2}>
+      <Box width={9000} border={5}>
 
       </Box>
 
-        <Grid container rowSpacing={0} xs={12} sm={6} md={4} lg={6}  borderColor="red" border={0}   justifyContent="center">
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/> 
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/>  
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/> 
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/> 
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/> 
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/> 
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/> 
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/> 
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={4} border={2} marginTop={0}>
-            <CardT/> 
-          </Grid>
-        </Grid> */}
-      
-      
     </Layout>
   )
 }
