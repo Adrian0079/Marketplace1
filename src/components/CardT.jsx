@@ -16,18 +16,19 @@ const CardT = (data) => {
     }
 
     //Funcion para añadir al carrito de compras.
-    const addProducts =(data)=>{
-        context.openProductDetail()
+    const addProducts =(product)=>{
+        
         context.setCounter(context.counter + 1)
-        context.setCartP([...context.cartP, data])
-        console.log("carrito", context.cartP )
+        context.setCartP([...context.cartP, product])
+        console.log("carrito", context.cartP)
+        
     }
 
 
     return (
       
         <Box>
-          <Box display="flex" alignItems="center" justifyContent="center" borderRadius={0.1} border={5} borderColor="red">
+          <Box display="flex" alignItems="center" justifyContent="center" borderRadius={0.1} border={0} borderColor="red">
             <TextField
             type="text"
             placeholder="Search products"
@@ -48,10 +49,10 @@ const CardT = (data) => {
                   <Card>
                   <CardMedia
                     sx={{ height: 140 }}
-                    image={product.images}
-                    title="green iguana"
+                    image={product.images[0]}
+                    
                     />
-                    <Fab color="primary" aria-label="add" onClick={() => context.setCounter(context.counter + 1)}>
+                    <Fab color="primary" aria-label="add" onClick={() => addProducts(product)}>
                         <Add />
                     </Fab>
                     <CardContent>

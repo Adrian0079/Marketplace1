@@ -20,7 +20,7 @@ const Home = () => {
       
 
       
-      <Box marginTop={5} border={2} borderColor={"green"}   >
+      <Box marginTop={5} border={0} borderColor={"green"}   >
       
         <CardT />  
 

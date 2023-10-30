@@ -8,23 +8,14 @@ export const ShoppingCartProvider =({children}) =>{
     const [counter, setCounter ] =useState(0);
     
 
-    //Detalles de el producto
-    const [isDetail, setIsDetail ] =useState(false);
-    const openProductDetail = () => setIsDetail(true);
-    const closeProductDetail = () => setIsDetail(false);
-
-    //Product Detail --- Mostramos producto
-    const[showProduct, setShowProduct] = useState([]
-        
-    );
     
+
+   
 
     //Carrito de compras
     const[cartP, setCartP] = useState([]);
 
-    // const [check, setCheck ] =useState(false);
-    // const openCheck = () => setCheck(true);
-    // const closeCheck = () => setIsDetail(false);
+    
 
     //Productos de la api-------->
 
@@ -48,9 +39,7 @@ export const ShoppingCartProvider =({children}) =>{
 
     return(
         <ShoppingCartContext.Provider value={{
-            counter,setCounter,
-            openProductDetail, closeProductDetail, setIsDetail, isDetail, 
-            showProduct, setShowProduct,
+            counter,setCounter, 
             cartP, setCartP,
             products, setProducts,
             searchTerm, setSearchTerm
