@@ -31,18 +31,28 @@ const CardT = () => {
             placeholder="Search products"
             value={context.searchTerm}
             onChange={(e) => context.setSearchTerm(e.target.value)}
-            sx={{marginBottom: "50px", marginTop: "50px", width:"400px", border:'2px solid #ccc', borderRadius:"5px"}}
+            sx={{
+              marginBottom: "50px", 
+              marginTop: "50px", 
+              width:{xs:270, sm:400, md:400, lg:400, xl:400}, 
+              border:'2px solid #ccc', 
+              borderRadius:"5px"}}
           />
           </Box>
         
-        <Grid container spacing={1}>
+        <Grid container spacing={0} width="65vw" border={0}
+        sx={{
+          marginLeft:{xs:"32px", sm:"0px"}
+        }}
+        >
           {context.products &&
             context.products
               .filter((product) =>
                 product.title.toLowerCase().includes(context.searchTerm.toLowerCase())
               )
               .map((product) => (
-                <Grid boxShadow={5} item xs={12} sm={6} md={4} lg={2} xl={1} key={product.id}  >
+                <Grid boxShadow={5} border={0}
+                 item xs={12} sm={6} md={4} lg={4} xl={3} key={product.id}  >
                   <Card sx={{width: '100%', height: '100%'}}>
                   <CardMedia
                     sx={{ height: 140 }}

@@ -47,11 +47,26 @@ const MyOrder = () => {
         </Grid>
       ))}
     </Grid>
-    <Typography variant="h6" component="div" 
-    bgcolor={"orange"} fontWeight="bold" 
-    fontSize={32} borderRadius={4} p={2} height={95} border={5} borderColor={"gray"}>
-                Total Price: ${context.addPrice} 
-              </Typography>
+    <Box border={1} xs={12} sm={6} md={4} lg={2} xl={1}
+    sx={{
+      width:"20vw",
+      height:{xs:"9vh", sm:"11vh", md:"9vh", lg:"9vh", xl:"9vh",},
+      boxShadow:4,
+      borderRadius:2
+    }}
+    >
+    <Typography variant="body1" component="div" 
+    fontWeight="bold" 
+    p={0.2} width="100%" 
+    height="100px" border={0}
+    sx={{
+      fontSize:{xs:18, sm:22, md:28, lg:32, xl:32,}
+    }}
+    >
+      Total Price: ${context.addPrice} 
+    </Typography>
+    </Box>
+    
     </Layout>
   )
 }
